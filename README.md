@@ -1,247 +1,285 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="A demonstration of video generation models.">
-  <meta name="keywords" content="Video Generation, AI, Demo">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zo3T: Zero-shot 3D-Aware Trajectory-Guided image-to-video generation via Test-Time Training</title>
+# Zo3T: Zero-shot 3D-Aware Trajectory-Guided image-to-video generation via Test-Time Training
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<p align="center">
+  <strong>Ruicheng Zhang</strong><sup>1,2*</sup>,
+  <strong>Jun Zhou</strong><sup>1*</sup>,
+  <strong>Zunnan Xu</strong><sup>1*</sup>,
+  <strong>Zihao Liu</strong><sup>1</sup>,
+  <strong>Jiehui Huang</strong><sup>3</sup>,
+  <strong>Mingyang Zhang</strong><sup>4</sup>,
+  <strong>Yu Sun</strong><sup>2</sup>,
+  <strong>Xiu Li</strong><sup>1†</sup>
 
-  <style>
-    .hero.teaser {
-      position: relative;
-      overflow: hidden;
-      min-height: 400px;
-    }
-    .hero.teaser video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-    }
-    .hero-body .subtitle {
-        color: white;
-        text-shadow: 2px 2px 4px #000000;
-    }
-    .comparison-video video,
-    .side-by-side video {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    .side-by-side img {
-      width: 100%;
-      object-fit: contain;
-    }
-    .card {
-        background-color: #fdfdfd;
-    }
-  </style>
+<p align="center"><sub>
+  <sup>1</sup> Tsinghua University, <sup>2</sup> Sun Yat-sen University<br>
+  <sup>3</sup> The Hong Kong University of Science and Technology, <sup>4</sup> China University of Mining and Technology
+</sub></p>
 
-</head>
-<body>
+<p align="center"><sub>* Equal contribution. † Corresponding author.</sub></p>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Zo3T: Zero-shot 3D-Aware Trajectory-Guided image-to-video generation via Test-Time Training</h1>
-          <!-- Author and affiliation info -->
-          <div class="is-size-5 publication-authors" style="margin-bottom: 0.5em;">
-            <span class="author-block">
-              Ruicheng Zhang<sup>1,2</sup><span style="font-size:0.9em;">†</span>, Jun Zhou<sup>1</sup><span style="font-size:0.9em;">†</span>, Zunnan Xu<sup>1</sup><span style="font-size:0.9em;">†</span>, Zihao Liu<sup>1</sup>, Jiehui Huang<sup>3</sup>,<br>
-              Mingyang Zhang<sup>4</sup>, Yu Sun<sup>2</sup>, Xiu Li<sup>1</sup><span style="font-size:0.9em;">*</span>
-            </span>
-          </div>
-          <div class="is-size-6 publication-affiliations" style="color: #555;">
-            <span class="affiliation-block">
-              <sup>1</sup>Tsinghua University &nbsp;
-              <sup>2</sup>Sun Yat-sen University<br>
-              <sup>3</sup>The Hong Kong University of Science and Technology &nbsp;
-              <sup>4</sup>China University of Mining and Technology
-            </span>
-            <br>
-            <span style="font-size:0.9em;">† Co-first authors</span> &nbsp; <span style="font-size:0.9em;">* Corresponding author</span>
-          </div>
-        </div>
-      </div>
-      <!-- Abstract section -->
-      <div class="columns is-centered">
-        <div class="column is-three-quarters">
-          <div class="box" style="background: #f7f7fa;">
-            <h2 class="title is-4 has-text-centered">Abstract</h2>
-            <p style="font-size: 1.1em;">
-              Trajectory-Guided image-to-video (I2V) generation aims to synthesize videos that adhere to user-specified motion instructions. Existing methods typically rely on computationally expensive fine-tuning on scarce annotated datasets. Although some zero-shot methods attempt to trajectory control in the latent space, they may yield unrealistic motion by neglecting 3D perspective and creating a misalignment between the manipulated latents and the network's noise predictions. To address these challenges, we introduce Zo3T, a novel zero-shot test-time-training framework for trajectory-guided generation with three core innovations: First, we incorporate a 3D-Aware Kinematic Projection, leveraging inferring scene depth to derive perspective-correct affine transformations for target regions. Second, we introduce Trajectory-Guided Test-Time LoRA, a mechanism that dynamically injects and optimizes ephemeral LoRA adapters into the denoising network alongside the latent state. Driven by a regional feature consistency loss, this co-adaptation effectively enforces motion constraints while allowing the pre-trained model to locally adapt its internal representations to the manipulated latent, thereby ensuring generative fidelity and on-manifold adherence. Finally, we develop Guidance Field Rectification, which refines the denoising evolutionary path by optimizing the conditional guidance field through a one-step lookahead strategy, ensuring efficient generative progression towards the target trajectory.
-              <br>
-              Zo3T significantly enhances 3D realism and motion accuracy in trajectory-controlled I2V generation, demonstrating superior performance over existing training-based and zero-shot approaches.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Pipeline image section -->
-      <div class="columns is-centered">
-  <div class="column is-full has-text-centered">
-    <div class="box">
-      <h2 class="title is-5">Pipeline Framework</h2>
-      <figure>
-        <img src="./static/images/framework.png" alt="Pipeline Framework Overview"
-             style="width:100vw; max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); display:block; margin:0 auto;">
-        <figcaption style="margin-top:1em; font-size:1.05em; color:#444; text-align:left; padding-left:10px;">
-          An overview of our zero-shot trajectory-guided video generation framework. Our method optimizes a pre-trained video diffusion model at specific denoising timesteps via two key stages. First, <b>Test-Time Training (TTT)</b> adapts the latent state and an ephemeral adapter to maintain semantic consistency along the trajectory. Second, <b>Guidance Field Rectification</b> refines the denoising direction using a one-step lookahead optimization to ensure precise path execution.
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</section>
+## Framework Overview
 
+![Framework Diagram](asserts/images/framework.png)
 
+<p><small><i>
+An overview of our zero-shot trajectory-guided video generation framework.
+Our method optimizes a pre-trained video diffusion model at specific denoising timesteps via two key stages.
+First, <b>Test-Time Training (TTT)</b> adapts the latent state and an ephemeral adapter to maintain semantic consistency along the trajectory.
+Second, <b>Guidance Field Rectification</b> refines the denoising direction using a one-step lookahead optimization to ensure precise path execution.
+</i></small></p>
 
+## Results
 
-<section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Comparison with Other Methods</h2>
-        </div>
-      </div>
-      
-      <div class="box">
-        <h3 class="title is-4 has-text-centered">Comparison Set 1</h3>
-        <div class="has-text-centered" style="margin-bottom: 20px;">
-            <p><strong>Condition Image</strong></p>
-            <img src="./static/videos/1-compare/condition_vis.png" alt="Condition for Comparison Set 1" style="max-width: 400px; height: auto;">
-        </div>
-        <div class="columns is-multiline is-centered">
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">Ours</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/1-compare/Ours.mp4" type="video/mp4"></video>
-           </div>
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">DragAnything</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/1-compare/DragAnything.mp4" type="video/mp4"></video>
-           </div>
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">DragNUWA</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/1-compare/DragNUWA.mp4" type="video/mp4"></video>
-           </div>
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">ObjCtrl-2.5D</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/1-compare/ObjCtrl-2.5D.mp4" type="video/mp4"></video>
-           </div>
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">SG-I2V</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/1-compare/SG-I2V.mp4" type="video/mp4"></video>
-           </div>
-        </div>
-      </div>
+<h3 align="center">Qualitative Results</h3>
 
-      <div class="box">
-        <h3 class="title is-4 has-text-centered">Comparison Set 2</h3>
-        <div class="has-text-centered" style="margin-bottom: 20px;">
-            <p><strong>Condition Image</strong></p>
-            <img src="./static/videos/2-compare/condition_vis.png" alt="Condition for Comparison Set 2" style="max-width: 400px; height: auto;">
-        </div>
-        <div class="columns is-multiline is-centered">
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">Ours</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/2-compare/Ours.mp4" type="video/mp4"></video>
-           </div>
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">DragAnything</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/2-compare/DragAnything.mp4" type="video/mp4"></video>
-           </div>
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">DragNUWA</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/2-compare/DragNUWA.mp4" type="video/mp4"></video>
-           </div>
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">ObjCtrl-2.5D</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/2-compare/ObjCtrl-2.5D.mp4" type="video/mp4"></video>
-           </div>
-           <div class="column is-one-third comparison-video">
-               <h4 class="title is-5">SG-I2V</h4>
-               <video autoplay controls muted loop playsinline><source src="./static/videos/2-compare/SG-I2V.mp4" type="video/mp4"></video>
-           </div>
-        </div>
-      </div>
-      
-    </div>
-  </section>
+<table>
+  <tr>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/1-compare/condition_vis.png" width="220" alt="Condition 1"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/Ours.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/2-compare/condition_vis.png" width="220" alt="Condition 2"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/Ours.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/3/condition_vis.png" width="220" alt="Condition 3"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/3/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/4/condition_vis.png" width="220" alt="Condition 4"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/4/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/5/condition_vis.png" width="220" alt="Condition 5"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/5/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/6/condition_vis.png" width="220" alt="Condition 6"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/6/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/7/condition_vis.png" width="220" alt="Condition 7"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/7/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/8/condition_vis.png" width="220" alt="Condition 8"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/8/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+  </tr>
+  <tr><td colspan="4" align="center" style="padding:6px 0;"><span style="color:#6a737d"><b>(a) Object Control (1–8)</b></span></td></tr>
+  <tr>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/9/condition_vis.png" width="220" alt="Condition 9"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/9/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/10/condition_vis.png" width="220" alt="Condition 10"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/10/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/11/condition_vis.png" width="220" alt="Condition 11"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/11/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/12/condition_vis.png" width="220" alt="Condition 12"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/12/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/13/condition_vis.png" width="220" alt="Condition 13"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/13/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/14/condition_vis.png" width="220" alt="Condition 14"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/14/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/15/condition_vis.png" width="220" alt="Condition 15"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/15/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/16/condition_vis.png" width="220" alt="Condition 16"/></div>
+      <div style="margin-top: 6px;"><video src="asserts/videos/16/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    </td>
+  </tr>
+  <tr><td colspan="4" align="center" style="padding:6px 0;"><span style="color:#6a737d"><b>(b) Camera Control (9–16)</b></span></td></tr>
+</table>
 
+<!-- ========================================= -->
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Side-by-Side Demos</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        </div>
-    </div>
-  </div>
-</section>
+<!--            Comparisons with Other Models         -->
 
+<h3 align="center">Qualitative Comparisons</h3>
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>This website template was adapted from the <a href="https://nerfies.github.io">Nerfies</a> project page.</p>
-    </div>
-  </div>
-</footer>
+<table>
+  <tr><td colspan="3" align="center" style="padding:6px 0;"><span style="color:#6a737d"><b>Example 1 </b></span></td></tr>
+  <tr>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/1-compare/condition_vis.png" width="220" alt="Condition"/></div>
+      <div style="margin-top: 6px;"><span style="color:#6a737d; font-size: 12px;">Condition</span></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/Ours.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">Ours</span></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/DragAnything.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">DragAnything</span></div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/DragNUWA.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">DragNUWA</span></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/SG-I2V.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">SG-I2V</span></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/ObjCtrl-2.5D.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">ObjCtrl-2.5D</span></div>
+    </td>
+  </tr>
+</table>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-<script>
-    // Dynamically generate the side-by-side demo carousel
-    const demoFolders = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
-    const carouselContainer = document.getElementById('results-carousel');
-    
-    demoFolders.forEach(i => {
-      const item = document.createElement('div');
-      item.className = 'item';
-      item.innerHTML = `
-        <div class="card">
-          <div class="card-content">
-            <h3 class="title is-4 has-text-centered">Demo</h3>
-            <div class="columns is-vcentered is-centered side-by-side">
-              <div class="column">
-                <p class="has-text-centered"><strong>Condition Image</strong></p>
-                <img src="./static/videos/${i}/condition_vis.png" alt="Condition for Demo ${i}">
-              </div>
-              <div class="column">
-                <p class="has-text-centered"><strong>Generated Video</strong></p>
-                <video autoplay controls muted loop playsinline>
-                  <source src="./static/videos/${i}/result.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-      carouselContainer.appendChild(item);
-    });
+<!-- Example 2: asserts/videos/2-compare -->
 
-    // Initialize the carousel
-    bulmaCarousel.attach('#results-carousel', {
-      slidesToScroll: 1,
-      slidesToShow: 1, // Show one full side-by-side demo at a time
-      loop: true,
-      autoplay: true,
-      autoplaySpeed: 5000, // Slower speed to allow for viewing
-    });
-</script>
+<table>
+  <tr><td colspan="3" align="center" style="padding:6px 0;"><span style="color:#6a737d"><b>Example 2</b></span></td></tr>
+  <tr>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div><img src="asserts/videos/2-compare/condition_vis.png" width="220" alt="Condition"/></div>
+      <div style="margin-top: 6px;"><span style="color:#6a737d">Condition</span></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/Ours.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d">Ours</span></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/DragAnything.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d">DragAnything</span></div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/DragNUWA.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d">DragNUWA</span></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/SG-I2V.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d">SG-I2V</span></div>
+    </td>
+    <td align="center" style="vertical-align: top; padding: 8px;">
+      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/ObjCtrl-2.5D.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+      <div style="margin-top: 4px;"><span style="color:#6a737d">ObjCtrl-2.5D</span></div>
+    </td>
+  </tr>
+</table>
 
-</body>
-</html>
+## Getting Started
+
+### Prerequisites
+
+- Python 3.12
+- PyTorch
+- `diffusers`, `transformers`, `accelerate`
+- `numpy`, `opencv-python`, `matplotlib`, `Pillow`
+- A pre-trained Stable Video Diffusion model.
+
+### Installation
+
+Follow these steps to set up the environment and install all necessary dependencies.
+
+**1. Clone the Repository**
+
+First, clone the Zo3T repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/Zo3T-main.git
+cd Zo3T-main
+```
+
+**2. Create and Activate a Conda Environment**
+
+We recommend using `conda` to manage dependencies. Create a new environment and activate it:
+
+```bash
+conda create -n zo3t python=3.12 -y
+conda activate zo3t
+```
+
+**3. Install All Dependencies**
+
+All required packages are listed in `requirements.txt`. Install them using a single `pip` command:
+
+```bash
+pip install -r requirements.txt
+```
+
+> **Note on CUDA:** The `requirements.txt` file includes `torch` and `torchvision`. For systems with NVIDIA GPUs, `pip` will attempt to install the appropriate CUDA-enabled version automatically. If you encounter any CUDA-related issues after installation, we recommend installing PyTorch manually by following the instructions on the [official PyTorch website](https://pytorch.org/get-started/locally/).
+
+**4. Download the Stable Video Diffusion Model**
+
+The pipeline requires the weights for the Stable Video Diffusion model. You need to download the `stable-video-diffusion-img2vid` model checkpoint.
+
+- You can download it from the [official Hugging Face repository](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid).
+- Place the downloaded model folder in a convenient location.
+
+Then, update the `svd_dir` variable in the `inference.py` script to point to the directory where you saved the model:
+
+```python
+# in inference.py
+...
+#Load pre-trained image-to-video diffusion models
+print("Loading Stable Video Diffusion from local path..")
+svd_dir = "/path/to/your/stable-video-diffusion-img2vid" # ⬅️ UPDATE THIS PATH
+...
+```
+
+You are now ready to run the inference script.
+
+### Usage
+
+Prepare your input directory with the following structure:
+
+```
+/path/to/your/input_dir/
+├── img.png
+└── traj.npy
+```
+
+- `img.png`: The first frame of the video.
+- `traj.npy`: A NumPy array of shape `[N, (2+F), 2]`, where:
+  - `N` is the number of objects to track.
+  - The first slice `[:, :2, :]` contains the top-left and bottom-right coordinates `[[w1, h1], [w2, h2]]` of the initial bounding boxes.
+  - The second slice `[:, 2:, :]` contains the trajectory of the center point for each bounding box over `F` frames.
+
+Run the inference script:
+
+```bash
+python inference.py --input_dir /path/to/your/input_dir/ --output_dir /path/to/your/output_dir/
+```
+
+### Configuration
+
+Hyperparameters can be adjusted within the `Config` class in `inference.py`:
+
+- `seed`: Random seed for reproducibility.
+- `height`, `width`: Resolution of the generated video.
+- `num_frames`: Number of frames to generate.
+- `num_inference_steps`: Total number of denoising steps.
+- `optimize_latent_time`: A list of timesteps at which to perform optimization.
+- `optimize_latent_iter`: Number of optimization iterations per timestep.
+- `optimize_latent_lr`: Learning rate for latent optimization.
+- `enable_lora`: Set to `True` to use LoRA during optimization.
+- `enable_depth_scaling`: Set to `True` to enable depth-aware trajectory scaling.
+- `enable_control_force_optimization`: Set to `True` to enable control force optimization.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.

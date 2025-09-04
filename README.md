@@ -30,156 +30,277 @@ Second, <b>Guidance Field Rectification</b> refines the denoising direction usin
 
 ## Results
 
-<h3 align="center">Qualitative Results</h3>
+### Qualitative Results
 
-<table>
+<div align="center">
+<h4>Object Control (Examples 1-8)</h4>
+</div>
+
+<table align="center">
   <tr>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/1-compare/condition_vis.png" width="220" alt="Condition 1"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/Ours.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/1-compare/condition_vis.png" width="200" alt="Condition 1"/>
+      <br><small><b>Condition 1</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/1-compare/Ours.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/Ours.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/2-compare/condition_vis.png" width="220" alt="Condition 2"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/Ours.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/2-compare/condition_vis.png" width="200" alt="Condition 2"/>
+      <br><small><b>Condition 2</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/2-compare/Ours.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/Ours.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/3/condition_vis.png" width="220" alt="Condition 3"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/3/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/3/condition_vis.png" width="200" alt="Condition 3"/>
+      <br><small><b>Condition 3</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/3/result.mp4" type="video/mp4">
+        <a href="asserts/videos/3/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/4/condition_vis.png" width="220" alt="Condition 4"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/4/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/4/condition_vis.png" width="200" alt="Condition 4"/>
+      <br><small><b>Condition 4</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/4/result.mp4" type="video/mp4">
+        <a href="asserts/videos/4/result.mp4">View Video</a>
+      </video>
     </td>
   </tr>
   <tr>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/5/condition_vis.png" width="220" alt="Condition 5"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/5/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/5/condition_vis.png" width="200" alt="Condition 5"/>
+      <br><small><b>Condition 5</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/5/result.mp4" type="video/mp4">
+        <a href="asserts/videos/5/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/6/condition_vis.png" width="220" alt="Condition 6"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/6/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/6/condition_vis.png" width="200" alt="Condition 6"/>
+      <br><small><b>Condition 6</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/6/result.mp4" type="video/mp4">
+        <a href="asserts/videos/6/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/7/condition_vis.png" width="220" alt="Condition 7"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/7/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/7/condition_vis.png" width="200" alt="Condition 7"/>
+      <br><small><b>Condition 7</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/7/result.mp4" type="video/mp4">
+        <a href="asserts/videos/7/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/8/condition_vis.png" width="220" alt="Condition 8"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/8/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-    </td>
-  </tr>
-  <tr><td colspan="4" align="center" style="padding:6px 0;"><span style="color:#6a737d"><b>(a) Object Control (1–8)</b></span></td></tr>
-  <tr>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/9/condition_vis.png" width="220" alt="Condition 9"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/9/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/10/condition_vis.png" width="220" alt="Condition 10"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/10/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/11/condition_vis.png" width="220" alt="Condition 11"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/11/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/12/condition_vis.png" width="220" alt="Condition 12"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/12/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/13/condition_vis.png" width="220" alt="Condition 13"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/13/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/14/condition_vis.png" width="220" alt="Condition 14"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/14/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/15/condition_vis.png" width="220" alt="Condition 15"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/15/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/16/condition_vis.png" width="220" alt="Condition 16"/></div>
-      <div style="margin-top: 6px;"><video src="asserts/videos/16/result.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-    </td>
-  </tr>
-  <tr><td colspan="4" align="center" style="padding:6px 0;"><span style="color:#6a737d"><b>(b) Camera Control (9–16)</b></span></td></tr>
-</table>
-
-<!-- ========================================= -->
-
-<!--            Comparisons with Other Models         -->
-
-<h3 align="center">Qualitative Comparisons</h3>
-
-<table>
-  <tr><td colspan="3" align="center" style="padding:6px 0;"><span style="color:#6a737d"><b>Example 1 </b></span></td></tr>
-  <tr>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/1-compare/condition_vis.png" width="220" alt="Condition"/></div>
-      <div style="margin-top: 6px;"><span style="color:#6a737d; font-size: 12px;">Condition</span></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/Ours.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">Ours</span></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/DragAnything.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">DragAnything</span></div>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/DragNUWA.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">DragNUWA</span></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/SG-I2V.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">SG-I2V</span></div>
-    </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/1-compare/ObjCtrl-2.5D.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d; font-size: 12px;">ObjCtrl-2.5D</span></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/8/condition_vis.png" width="200" alt="Condition 8"/>
+      <br><small><b>Condition 8</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/8/result.mp4" type="video/mp4">
+        <a href="asserts/videos/8/result.mp4">View Video</a>
+      </video>
     </td>
   </tr>
 </table>
 
-<!-- Example 2: asserts/videos/2-compare -->
+<div align="center">
+<h4>Camera Control (Examples 9-16)</h4>
+</div>
 
-<table>
-  <tr><td colspan="3" align="center" style="padding:6px 0;"><span style="color:#6a737d"><b>Example 2</b></span></td></tr>
+<table align="center">
   <tr>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div><img src="asserts/videos/2-compare/condition_vis.png" width="220" alt="Condition"/></div>
-      <div style="margin-top: 6px;"><span style="color:#6a737d">Condition</span></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/9/condition_vis.png" width="200" alt="Condition 9"/>
+      <br><small><b>Condition 9</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/9/result.mp4" type="video/mp4">
+        <a href="asserts/videos/9/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/Ours.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d">Ours</span></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/10/condition_vis.png" width="200" alt="Condition 10"/>
+      <br><small><b>Condition 10</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/10/result.mp4" type="video/mp4">
+        <a href="asserts/videos/10/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/DragAnything.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d">DragAnything</span></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/11/condition_vis.png" width="200" alt="Condition 11"/>
+      <br><small><b>Condition 11</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/11/result.mp4" type="video/mp4">
+        <a href="asserts/videos/11/result.mp4">View Video</a>
+      </video>
+    </td>
+    <td align="center" width="25%">
+      <img src="asserts/videos/12/condition_vis.png" width="200" alt="Condition 12"/>
+      <br><small><b>Condition 12</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/12/result.mp4" type="video/mp4">
+        <a href="asserts/videos/12/result.mp4">View Video</a>
+      </video>
     </td>
   </tr>
   <tr>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/DragNUWA.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d">DragNUWA</span></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/13/condition_vis.png" width="200" alt="Condition 13"/>
+      <br><small><b>Condition 13</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/13/result.mp4" type="video/mp4">
+        <a href="asserts/videos/13/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/SG-I2V.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d">SG-I2V</span></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/14/condition_vis.png" width="200" alt="Condition 14"/>
+      <br><small><b>Condition 14</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/14/result.mp4" type="video/mp4">
+        <a href="asserts/videos/14/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center" style="vertical-align: top; padding: 8px;">
-      <div style="margin-top: 6px;"><video src="asserts/videos/2-compare/ObjCtrl-2.5D.mp4" width="220" controls muted loop autoplay playsinline></video></div>
-      <div style="margin-top: 4px;"><span style="color:#6a737d">ObjCtrl-2.5D</span></div>
+    <td align="center" width="25%">
+      <img src="asserts/videos/15/condition_vis.png" width="200" alt="Condition 15"/>
+      <br><small><b>Condition 15</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/15/result.mp4" type="video/mp4">
+        <a href="asserts/videos/15/result.mp4">View Video</a>
+      </video>
+    </td>
+    <td align="center" width="25%">
+      <img src="asserts/videos/16/condition_vis.png" width="200" alt="Condition 16"/>
+      <br><small><b>Condition 16</b></small>
+      <br>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/16/result.mp4" type="video/mp4">
+        <a href="asserts/videos/16/result.mp4">View Video</a>
+      </video>
     </td>
   </tr>
 </table>
+
+### Qualitative Comparisons
+
+<div align="center">
+<h4>Example 1</h4>
+</div>
+
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <img src="asserts/videos/1-compare/condition_vis.png" width="220" alt="Condition"/>
+      <br><b>Condition</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #4CAF50;">
+        <source src="asserts/videos/1-compare/Ours.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/Ours.mp4">View Our Result</a>
+      </video>
+      <br><b style="color: #4CAF50;">Ours</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #FF9800;">
+        <source src="asserts/videos/1-compare/DragAnything.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/DragAnything.mp4">View DragAnything</a>
+      </video>
+      <br><b style="color: #FF9800;">DragAnything</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #9C27B0;">
+        <source src="asserts/videos/1-compare/DragNUWA.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/DragNUWA.mp4">View DragNUWA</a>
+      </video>
+      <br><b style="color: #9C27B0;">DragNUWA</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #2196F3;">
+        <source src="asserts/videos/1-compare/SG-I2V.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/SG-I2V.mp4">View SG-I2V</a>
+      </video>
+      <br><b style="color: #2196F3;">SG-I2V</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #F44336;">
+        <source src="asserts/videos/1-compare/ObjCtrl-2.5D.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/ObjCtrl-2.5D.mp4">View ObjCtrl-2.5D</a>
+      </video>
+      <br><b style="color: #F44336;">ObjCtrl-2.5D</b>
+    </td>
+  </tr>
+</table>
+
+<div align="center">
+<h4>Example 2</h4>
+</div>
+
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <img src="asserts/videos/2-compare/condition_vis.png" width="220" alt="Condition"/>
+      <br><b>Condition</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #4CAF50;">
+        <source src="asserts/videos/2-compare/Ours.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/Ours.mp4">View Our Result</a>
+      </video>
+      <br><b style="color: #4CAF50;">Ours</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #FF9800;">
+        <source src="asserts/videos/2-compare/DragAnything.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/DragAnything.mp4">View DragAnything</a>
+      </video>
+      <br><b style="color: #FF9800;">DragAnything</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #9C27B0;">
+        <source src="asserts/videos/2-compare/DragNUWA.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/DragNUWA.mp4">View DragNUWA</a>
+      </video>
+      <br><b style="color: #9C27B0;">DragNUWA</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #2196F3;">
+        <source src="asserts/videos/2-compare/SG-I2V.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/SG-I2V.mp4">View SG-I2V</a>
+      </video>
+      <br><b style="color: #2196F3;">SG-I2V</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #F44336;">
+        <source src="asserts/videos/2-compare/ObjCtrl-2.5D.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/ObjCtrl-2.5D.mp4">View ObjCtrl-2.5D</a>
+      </video>
+      <br><b style="color: #F44336;">ObjCtrl-2.5D</b>
+    </td>
+  </tr>
+</table>
+
+> **注意**: 视频将自动播放并循环。如果视频无法显示，请点击链接直接查看。
 
 ## Getting Started
 
@@ -220,8 +341,6 @@ All required packages are listed in `requirements.txt`. Install them using a sin
 ```bash
 pip install -r requirements.txt
 ```
-
-> **Note on CUDA:** The `requirements.txt` file includes `torch` and `torchvision`. For systems with NVIDIA GPUs, `pip` will attempt to install the appropriate CUDA-enabled version automatically. If you encounter any CUDA-related issues after installation, we recommend installing PyTorch manually by following the instructions on the [official PyTorch website](https://pytorch.org/get-started/locally/).
 
 **4. Download the Stable Video Diffusion Model**
 
@@ -279,7 +398,3 @@ Hyperparameters can be adjusted within the `Config` class in `inference.py`:
 - `enable_lora`: Set to `True` to use LoRA during optimization.
 - `enable_depth_scaling`: Set to `True` to enable depth-aware trajectory scaling.
 - `enable_control_force_optimization`: Set to `True` to enable control force optimization.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.

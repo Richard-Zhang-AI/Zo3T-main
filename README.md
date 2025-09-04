@@ -32,245 +32,275 @@ Second, <b>Guidance Field Rectification</b> refines the denoising direction usin
 
 ### Qualitative Results
 
-#### Object Control (Examples 1-8)
+<div align="center">
+<h4>Object Control (Examples 1-8)</h4>
+</div>
 
-<table>
+<table align="center">
   <tr>
-    <td align="center">
-      <img src="asserts/videos/1-compare/condition_vis.png" width="150" alt="Condition 1"/>
-      <br><small>Condition 1</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/1-compare/condition_vis.png" width="200" alt="Condition 1"/>
+      <br><small><b>Condition 1</b></small>
       <br>
-      <a href="asserts/videos/1-compare/Ours.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 1"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/1-compare/Ours.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/Ours.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/2-compare/condition_vis.png" width="150" alt="Condition 2"/>
-      <br><small>Condition 2</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/2-compare/condition_vis.png" width="200" alt="Condition 2"/>
+      <br><small><b>Condition 2</b></small>
       <br>
-      <a href="asserts/videos/2-compare/Ours.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 2"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/2-compare/Ours.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/Ours.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/3/condition_vis.png" width="150" alt="Condition 3"/>
-      <br><small>Condition 3</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/3/condition_vis.png" width="200" alt="Condition 3"/>
+      <br><small><b>Condition 3</b></small>
       <br>
-      <a href="asserts/videos/3/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 3"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/3/result.mp4" type="video/mp4">
+        <a href="asserts/videos/3/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/4/condition_vis.png" width="150" alt="Condition 4"/>
-      <br><small>Condition 4</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/4/condition_vis.png" width="200" alt="Condition 4"/>
+      <br><small><b>Condition 4</b></small>
       <br>
-      <a href="asserts/videos/4/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 4"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/4/result.mp4" type="video/mp4">
+        <a href="asserts/videos/4/result.mp4">View Video</a>
+      </video>
     </td>
   </tr>
   <tr>
-    <td align="center">
-      <img src="asserts/videos/5/condition_vis.png" width="150" alt="Condition 5"/>
-      <br><small>Condition 5</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/5/condition_vis.png" width="200" alt="Condition 5"/>
+      <br><small><b>Condition 5</b></small>
       <br>
-      <a href="asserts/videos/5/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 5"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/5/result.mp4" type="video/mp4">
+        <a href="asserts/videos/5/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/6/condition_vis.png" width="150" alt="Condition 6"/>
-      <br><small>Condition 6</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/6/condition_vis.png" width="200" alt="Condition 6"/>
+      <br><small><b>Condition 6</b></small>
       <br>
-      <a href="asserts/videos/6/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 6"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/6/result.mp4" type="video/mp4">
+        <a href="asserts/videos/6/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/7/condition_vis.png" width="150" alt="Condition 7"/>
-      <br><small>Condition 7</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/7/condition_vis.png" width="200" alt="Condition 7"/>
+      <br><small><b>Condition 7</b></small>
       <br>
-      <a href="asserts/videos/7/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 7"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/7/result.mp4" type="video/mp4">
+        <a href="asserts/videos/7/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/8/condition_vis.png" width="150" alt="Condition 8"/>
-      <br><small>Condition 8</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/8/condition_vis.png" width="200" alt="Condition 8"/>
+      <br><small><b>Condition 8</b></small>
       <br>
-      <a href="asserts/videos/8/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 8"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/8/result.mp4" type="video/mp4">
+        <a href="asserts/videos/8/result.mp4">View Video</a>
+      </video>
     </td>
   </tr>
 </table>
 
-#### Camera Control (Examples 9-16)
+<div align="center">
+<h4>Camera Control (Examples 9-16)</h4>
+</div>
 
-<table>
+<table align="center">
   <tr>
-    <td align="center">
-      <img src="asserts/videos/9/condition_vis.png" width="150" alt="Condition 9"/>
-      <br><small>Condition 9</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/9/condition_vis.png" width="200" alt="Condition 9"/>
+      <br><small><b>Condition 9</b></small>
       <br>
-      <a href="asserts/videos/9/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 9"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/9/result.mp4" type="video/mp4">
+        <a href="asserts/videos/9/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/10/condition_vis.png" width="150" alt="Condition 10"/>
-      <br><small>Condition 10</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/10/condition_vis.png" width="200" alt="Condition 10"/>
+      <br><small><b>Condition 10</b></small>
       <br>
-      <a href="asserts/videos/10/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 10"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/10/result.mp4" type="video/mp4">
+        <a href="asserts/videos/10/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/11/condition_vis.png" width="150" alt="Condition 11"/>
-      <br><small>Condition 11</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/11/condition_vis.png" width="200" alt="Condition 11"/>
+      <br><small><b>Condition 11</b></small>
       <br>
-      <a href="asserts/videos/11/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 11"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/11/result.mp4" type="video/mp4">
+        <a href="asserts/videos/11/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/12/condition_vis.png" width="150" alt="Condition 12"/>
-      <br><small>Condition 12</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/12/condition_vis.png" width="200" alt="Condition 12"/>
+      <br><small><b>Condition 12</b></small>
       <br>
-      <a href="asserts/videos/12/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 12"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/12/result.mp4" type="video/mp4">
+        <a href="asserts/videos/12/result.mp4">View Video</a>
+      </video>
     </td>
   </tr>
   <tr>
-    <td align="center">
-      <img src="asserts/videos/13/condition_vis.png" width="150" alt="Condition 13"/>
-      <br><small>Condition 13</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/13/condition_vis.png" width="200" alt="Condition 13"/>
+      <br><small><b>Condition 13</b></small>
       <br>
-      <a href="asserts/videos/13/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 13"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/13/result.mp4" type="video/mp4">
+        <a href="asserts/videos/13/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/14/condition_vis.png" width="150" alt="Condition 14"/>
-      <br><small>Condition 14</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/14/condition_vis.png" width="200" alt="Condition 14"/>
+      <br><small><b>Condition 14</b></small>
       <br>
-      <a href="asserts/videos/14/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 14"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/14/result.mp4" type="video/mp4">
+        <a href="asserts/videos/14/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/15/condition_vis.png" width="150" alt="Condition 15"/>
-      <br><small>Condition 15</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/15/condition_vis.png" width="200" alt="Condition 15"/>
+      <br><small><b>Condition 15</b></small>
       <br>
-      <a href="asserts/videos/15/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 15"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/15/result.mp4" type="video/mp4">
+        <a href="asserts/videos/15/result.mp4">View Video</a>
+      </video>
     </td>
-    <td align="center">
-      <img src="asserts/videos/16/condition_vis.png" width="150" alt="Condition 16"/>
-      <br><small>Condition 16</small>
+    <td align="center" width="25%">
+      <img src="asserts/videos/16/condition_vis.png" width="200" alt="Condition 16"/>
+      <br><small><b>Condition 16</b></small>
       <br>
-      <a href="asserts/videos/16/result.mp4">
-        <img src="https://img.shields.io/badge/▶️-Watch_Video-blue" alt="Video 16"/>
-      </a>
+      <video width="200" autoplay muted loop playsinline preload="auto">
+        <source src="asserts/videos/16/result.mp4" type="video/mp4">
+        <a href="asserts/videos/16/result.mp4">View Video</a>
+      </video>
     </td>
   </tr>
 </table>
 
 ### Qualitative Comparisons
 
-#### Example 1
+<div align="center">
+<h4>Example 1</h4>
+</div>
 
-<table>
+<table align="center">
   <tr>
-    <td align="center">
-      <img src="asserts/videos/1-compare/condition_vis.png" width="180" alt="Condition"/>
-      <br><strong>Condition</strong>
+    <td align="center" width="33%">
+      <img src="asserts/videos/1-compare/condition_vis.png" width="220" alt="Condition"/>
+      <br><b>Condition</b>
     </td>
-    <td align="center">
-      <a href="asserts/videos/1-compare/Ours.mp4">
-        <img src="https://img.shields.io/badge/▶️-Ours-green?style=for-the-badge" alt="Our Result"/>
-      </a>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #4CAF50;">
+        <source src="asserts/videos/1-compare/Ours.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/Ours.mp4">View Our Result</a>
+      </video>
+      <br><b style="color: #4CAF50;">Ours</b>
     </td>
-    <td align="center">
-      <a href="asserts/videos/1-compare/DragAnything.mp4">
-        <img src="https://img.shields.io/badge/▶️-DragAnything-orange?style=for-the-badge" alt="DragAnything"/>
-      </a>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #FF9800;">
+        <source src="asserts/videos/1-compare/DragAnything.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/DragAnything.mp4">View DragAnything</a>
+      </video>
+      <br><b style="color: #FF9800;">DragAnything</b>
     </td>
   </tr>
   <tr>
-    <td align="center">
-      <a href="asserts/videos/1-compare/DragNUWA.mp4">
-        <img src="https://img.shields.io/badge/▶️-DragNUWA-purple?style=for-the-badge" alt="DragNUWA"/>
-      </a>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #9C27B0;">
+        <source src="asserts/videos/1-compare/DragNUWA.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/DragNUWA.mp4">View DragNUWA</a>
+      </video>
+      <br><b style="color: #9C27B0;">DragNUWA</b>
     </td>
-    <td align="center">
-      <a href="asserts/videos/1-compare/SG-I2V.mp4">
-        <img src="https://img.shields.io/badge/▶️-SG--I2V-blue?style=for-the-badge" alt="SG-I2V"/>
-      </a>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #2196F3;">
+        <source src="asserts/videos/1-compare/SG-I2V.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/SG-I2V.mp4">View SG-I2V</a>
+      </video>
+      <br><b style="color: #2196F3;">SG-I2V</b>
     </td>
-    <td align="center">
-      <a href="asserts/videos/1-compare/ObjCtrl-2.5D.mp4">
-        <img src="https://img.shields.io/badge/▶️-ObjCtrl--2.5D-red?style=for-the-badge" alt="ObjCtrl-2.5D"/>
-      </a>
-    </td>
-  </tr>
-</table>
-
-#### Example 2
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="asserts/videos/2-compare/condition_vis.png" width="180" alt="Condition"/>
-      <br><strong>Condition</strong>
-    </td>
-    <td align="center">
-      <a href="asserts/videos/2-compare/Ours.mp4">
-        <img src="https://img.shields.io/badge/▶️-Ours-green?style=for-the-badge" alt="Our Result"/>
-      </a>
-    </td>
-    <td align="center">
-      <a href="asserts/videos/2-compare/DragAnything.mp4">
-        <img src="https://img.shields.io/badge/▶️-DragAnything-orange?style=for-the-badge" alt="DragAnything"/>
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="asserts/videos/2-compare/DragNUWA.mp4">
-        <img src="https://img.shields.io/badge/▶️-DragNUWA-purple?style=for-the-badge" alt="DragNUWA"/>
-      </a>
-    </td>
-    <td align="center">
-      <a href="asserts/videos/2-compare/SG-I2V.mp4">
-        <img src="https://img.shields.io/badge/▶️-SG--I2V-blue?style=for-the-badge" alt="SG-I2V"/>
-      </a>
-    </td>
-    <td align="center">
-      <a href="asserts/videos/2-compare/ObjCtrl-2.5D.mp4">
-        <img src="https://img.shields.io/badge/▶️-ObjCtrl--2.5D-red?style=for-the-badge" alt="ObjCtrl-2.5D"/>
-      </a>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #F44336;">
+        <source src="asserts/videos/1-compare/ObjCtrl-2.5D.mp4" type="video/mp4">
+        <a href="asserts/videos/1-compare/ObjCtrl-2.5D.mp4">View ObjCtrl-2.5D</a>
+      </video>
+      <br><b style="color: #F44336;">ObjCtrl-2.5D</b>
     </td>
   </tr>
 </table>
 
-> **注意**: 点击上方的视频标志可以下载并播放相应的视频文件。
+<div align="center">
+<h4>Example 2</h4>
+</div>
 
-### 替代方案：GIF展示
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <img src="asserts/videos/2-compare/condition_vis.png" width="220" alt="Condition"/>
+      <br><b>Condition</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #4CAF50;">
+        <source src="asserts/videos/2-compare/Ours.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/Ours.mp4">View Our Result</a>
+      </video>
+      <br><b style="color: #4CAF50;">Ours</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #FF9800;">
+        <source src="asserts/videos/2-compare/DragAnything.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/DragAnything.mp4">View DragAnything</a>
+      </video>
+      <br><b style="color: #FF9800;">DragAnything</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #9C27B0;">
+        <source src="asserts/videos/2-compare/DragNUWA.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/DragNUWA.mp4">View DragNUWA</a>
+      </video>
+      <br><b style="color: #9C27B0;">DragNUWA</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #2196F3;">
+        <source src="asserts/videos/2-compare/SG-I2V.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/SG-I2V.mp4">View SG-I2V</a>
+      </video>
+      <br><b style="color: #2196F3;">SG-I2V</b>
+    </td>
+    <td align="center" width="33%">
+      <video width="220" autoplay muted loop playsinline preload="auto" style="border: 2px solid #F44336;">
+        <source src="asserts/videos/2-compare/ObjCtrl-2.5D.mp4" type="video/mp4">
+        <a href="asserts/videos/2-compare/ObjCtrl-2.5D.mp4">View ObjCtrl-2.5D</a>
+      </video>
+      <br><b style="color: #F44336;">ObjCtrl-2.5D</b>
+    </td>
+  </tr>
+</table>
 
-如果您希望直接在README中显示动态内容，建议将重要的MP4视频转换为GIF格式：
-
-```bash
-# 使用 ffmpeg 将 MP4 转换为 GIF
-ffmpeg -i asserts/videos/1-compare/Ours.mp4 -vf "fps=10,scale=320:-1:flags=lanczos" -loop 0 asserts/videos/1-compare/Ours.gif
-```
-
-然后可以直接使用：
-```markdown
-![Our Result](asserts/videos/1-compare/Ours.gif)
-```
+> **注意**: 视频将自动播放并循环。如果视频无法显示，请点击链接直接查看。
 
 ## Getting Started
 

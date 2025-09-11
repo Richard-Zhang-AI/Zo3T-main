@@ -14,7 +14,7 @@
 <p align="center">
   <sub>
     <sup>1</sup> Tsinghua University, <sup>2</sup> Sun Yat-sen University<br>
-    <sup>3</sup> The Hong Kong University of Science and Technology, <sup>4</sup> China University of Mining and Technology
+    <sup>3</sup> The Hong Kong University of Science and Technology, <sup>4</sup> China University of Geosciences
   </sub>
 </p>
 

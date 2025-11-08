@@ -53,9 +53,6 @@ To run Zo3T, ensure you have the following dependencies installed:
 | Requirement                       | Description                                      |
 |-----------------------------------|--------------------------------------------------|
 | **Python**                        | Version 3.12                                     |
-| **PyTorch**                       | Deep learning framework                          |
-| **Libraries**                     | `diffusers`, `transformers`, `accelerate`        |
-| **Additional Libraries**          | `numpy`, `opencv-python`, `matplotlib`, `Pillow` |
 | **Pre-trained Model**             | Stable Video Diffusion model                     |
 
 ### Installation

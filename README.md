@@ -155,10 +155,13 @@ Adjust hyperparameters in the `Config` class in `inference.py`:
 If you find our work useful for your research, please consider citing our paper:
 
 ```bibtex
-@inproceedings{zhang2026zo3t,
-  title     = {Zo3T: Zero-shot 3D-Aware Trajectory-Guided Image-to-Video Generation via Test-Time Training},
-  author    = {Zhang, Ruicheng and Zhou, Jun and Xu, Zunnan and Liu, Zihao and Huang, Jiehui and Zhang, Mingyang and Sun, Yu and Li, Xiu},
-  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
-  year      = {2026}
+@misc{zhang2025zeroshot3dawaretrajectoryguidedimagetovideo,
+      title={Zero-shot 3D-Aware Trajectory-Guided image-to-video generation via Test-Time Training}, 
+      author={Ruicheng Zhang and Jun Zhou and Zunnan Xu and Zihao Liu and Jiehui Huang and Mingyang Zhang and Yu Sun and Xiu Li},
+      year={2025},
+      eprint={2509.06723},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2509.06723}, 
 }
 ```

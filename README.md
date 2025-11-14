@@ -27,6 +27,10 @@
   <a href="https://richard-zhang-ai.github.io/"><img src="asserts/images/test_demo.png" alt="Demo Page" height="20" style="vertical-align:middle"> Demo Page</a>
 </p>
 
+<h1 align="center">
+  🎉 Our paper has been accepted to AAAI 2026! 🤖
+</h1>
+
 ---
 
 ## Framework Overview
@@ -145,4 +149,16 @@ Adjust hyperparameters in the `Config` class in `inference.py`:
 - **`enable_control_force_optimization`**: Set to `True` to enable control force optimization.
 
 ---
-`
+
+## Citation
+
+If you find our work useful for your research, please consider citing our paper:
+
+```bibtex
+@inproceedings{zhang2026zo3t,
+  title     = {Zo3T: Zero-shot 3D-Aware Trajectory-Guided Image-to-Video Generation via Test-Time Training},
+  author    = {Zhang, Ruicheng and Zhou, Jun and Xu, Zunnan and Liu, Zihao and Huang, Jiehui and Zhang, Mingyang and Sun, Yu and Li, Xiu},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
+  year      = {2026}
+}
+```
